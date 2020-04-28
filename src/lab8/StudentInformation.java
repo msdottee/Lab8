@@ -10,20 +10,68 @@ public class StudentInformation {
 		Scanner scnr = new Scanner(System.in);
 		boolean information = true;
 
-		String[] name = new String[10];
+		while (information) {
+			String[] name = new String[10];
+			
+			name[0] = "Paul John Knowles";
+			name[1] = "Twiggy Ramirez";
+			name[2] = "Patrick Kearney";
+			name[3] = "Earle Nelson";
+			name[4] = "Ronald dominique";
+			name[5] = "Charles Manson";
+			name[6] = "John Wayne Gacy";
+			name[7] = "Ted Bundy";
+			name[8] = "Gary Ridgway";
+			name[9] = "Samuel Little";
+			
+			int userInt = getSerialKiller(scnr, name);
+			scnr.nextLine();
+
+			printDetails(scnr, name, userInt);
+
+			System.out.println("Would you like to continue? (enter \"yes\" or \"no\")");
+			String answer = scnr.nextLine();
+
+			if (!answer.equals("yes")) {
+				information = false;
+				System.out.println("Thanks for learning about serial killers! Goodbye!");
+			}
+		}
+	}
+
+	private static int getSerialKiller(Scanner scnr, String[] name) {
+		System.out.print("Welcome to our Java class. " + "Which serial killer would you like to learn"
+				+ " more about? (enter a number 1-10)");
+
+		int userInt = 0;
+
+		System.out.println();
+
+		boolean correctInt = false;
+
+		while (!correctInt) {
+
+			try {
+				userInt = scnr.nextInt();
+				System.out.println(name[userInt] + ", is serial killer number " + userInt + ".");
+				correctInt = true;
+			} catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
+				scnr.nextLine();
+				System.out.println("That serial killer does not exist. Please try again. (enter a number 1-10)");
+			}
+		}
+		return userInt;
+	}
+	
+	private static void printDetails(Scanner scnr, String[] name, int userInt) {
+		System.out.println("Would you like know where " + name[userInt]
+				+ " was born or how many victims he had? (enter hometown or victims)");
+
+		String userString = "";
+		
+		boolean correctString = false;
 		String[] hometown = new String[10];
 		int[] numVictims = new int[10];
-
-		name[0] = "Paul John Knowles";
-		name[1] = "Twiggy Ramirez";
-		name[2] = "Patrick Kearney";
-		name[3] = "Earle Nelson";
-		name[4] = "Ronald dominique";
-		name[5] = "Charles Manson";
-		name[6] = "John Wayne Gacy";
-		name[7] = "Ted Bundy";
-		name[8] = "Gary Ridgway";
-		name[9] = "Samuel Little";
 
 		hometown[0] = "Orlando, FL";
 		hometown[1] = "El Paso, TX";
@@ -46,58 +94,18 @@ public class StudentInformation {
 		numVictims[7] = 30;
 		numVictims[8] = 71;
 		numVictims[9] = 93;
-
-		while (information) {
-			System.out.print("Welcome to our Java class. " + "Which serial killer would you like to learn"
-					+ " more about? (enter a number 1-10)");
-
-			int userInt = 0;
-
-			System.out.println();
-
-			boolean correctInt = false;
-
-			while (!correctInt) {
-				try {
-					userInt = scnr.nextInt();
-					System.out.println(name[userInt] + ", is serial killer number " + userInt + ".");
-					correctInt = true;
-				} catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
-					scnr.nextLine();
-					System.out.println("That serial killer does not exist. Please try again. (enter a number 1-10)");
-				}
-			}
-			scnr.nextLine();
-
-			System.out.println("Would you like know where " + name[userInt]
-					+ " was born or how many victims he had? (enter hometown or victims)");
-
-			String userString = "";
-			
-			boolean correctString = false;
-			
-			while (!correctString) {
-				userString = scnr.nextLine();
-				if (userString.equals("hometown")) {
-					System.out.println(name[userInt] + " was born in " + hometown[userInt] + ".");
-					correctString = true;
-				} else if (userString.equals("victims")) {
-					System.out.println(name[userInt] + " took a reported " + numVictims[userInt] + " lives.");
-					correctString = true;
-				} else {
-					System.out.println("That data does not exist. Please try again. (enter \"hometown\" or \"victims\")");
-				}
-			}
-
-			System.out.println("Would you like to continue? (enter \"yes\" or \"no\")");
-			String answer = scnr.nextLine();
-
-			if (!answer.equals("yes")) {
-				information = false;
-				System.out.println("Thanks for learning about serial killers! Goodbye!");
+		
+		while (!correctString) {
+			userString = scnr.nextLine();
+			if (userString.equals("hometown")) {
+				System.out.println(name[userInt] + " was born in " + hometown[userInt] + ".");
+				correctString = true;
+			} else if (userString.equals("victims")) {
+				System.out.println(name[userInt] + " took a reported " + numVictims[userInt] + " lives.");
+				correctString = true;
+			} else {
+				System.out.println("That data does not exist. Please try again. (enter \"hometown\" or \"victims\")");
 			}
 		}
-
 	}
-
 }
