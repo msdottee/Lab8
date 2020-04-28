@@ -11,23 +11,23 @@ public class StudentInformation {
 		boolean information = true;
 
 		while (information) {
-			String[] name = new String[10];
-			
-			name[0] = "Paul John Knowles";
-			name[1] = "Twiggy Ramirez";
-			name[2] = "Patrick Kearney";
-			name[3] = "Earle Nelson";
-			name[4] = "Ronald dominique";
-			name[5] = "Charles Manson";
-			name[6] = "John Wayne Gacy";
-			name[7] = "Ted Bundy";
-			name[8] = "Gary Ridgway";
-			name[9] = "Samuel Little";
-			
-			int userInt = getSerialKiller(scnr, name);
+			String[] serialKillerName = new String[10];
+
+			serialKillerName[0] = "Paul John Knowles";
+			serialKillerName[1] = "Twiggy Ramirez";
+			serialKillerName[2] = "Patrick Kearney";
+			serialKillerName[3] = "Earle Nelson";
+			serialKillerName[4] = "Ronald dominique";
+			serialKillerName[5] = "Charles Manson";
+			serialKillerName[6] = "John Wayne Gacy";
+			serialKillerName[7] = "Ted Bundy";
+			serialKillerName[8] = "Gary Ridgway";
+			serialKillerName[9] = "Samuel Little";
+
+			int userInt = getSerialKiller(scnr, serialKillerName);
 			scnr.nextLine();
 
-			printDetails(scnr, name, userInt);
+			printDetails(scnr, serialKillerName, userInt);
 
 			System.out.println("Would you like to continue? (enter \"yes\" or \"no\")");
 			String answer = scnr.nextLine();
@@ -62,13 +62,13 @@ public class StudentInformation {
 		}
 		return userInt;
 	}
-	
+
 	private static void printDetails(Scanner scnr, String[] name, int userInt) {
 		System.out.println("Would you like know where " + name[userInt]
 				+ " was born or how many victims he had? (enter hometown or victims)");
 
 		String userString = "";
-		
+
 		boolean correctString = false;
 		String[] hometown = new String[10];
 		int[] numVictims = new int[10];
@@ -94,7 +94,7 @@ public class StudentInformation {
 		numVictims[7] = 30;
 		numVictims[8] = 71;
 		numVictims[9] = 93;
-		
+
 		while (!correctString) {
 			userString = scnr.nextLine();
 			if (userString.equals("hometown")) {
