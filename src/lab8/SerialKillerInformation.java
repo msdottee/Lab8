@@ -39,7 +39,7 @@ public class SerialKillerInformation {
 	}
 
 	private static int getSerialKiller(Scanner scnr, String[] name) {
-		System.out.print("Welcome to our Java class. " + "Which serial killer would you like to learn"
+		System.out.print("Welcome to the database for serial killers. " + "Which serial killer would you like to learn"
 				+ " more about? (enter a number 1-10)");
 
 		int userInt = 0;
