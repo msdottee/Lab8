@@ -13,7 +13,7 @@ public class SerialKillerInformation {
 			String[] serialKillerName = new String[10];
 
 			serialKillerName[0] = "Paul John Knowles";
-			serialKillerName[1] = "Twiggy Ramirez";
+			serialKillerName[1] = "Richard Ramirez";
 			serialKillerName[2] = "Patrick Kearney";
 			serialKillerName[3] = "Earle Nelson";
 			serialKillerName[4] = "Ronald Dominique";
