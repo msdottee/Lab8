@@ -17,7 +17,7 @@ public class StudentInformation {
 			serialKillerName[1] = "Twiggy Ramirez";
 			serialKillerName[2] = "Patrick Kearney";
 			serialKillerName[3] = "Earle Nelson";
-			serialKillerName[4] = "Ronald dominique";
+			serialKillerName[4] = "Ronald Dominique";
 			serialKillerName[5] = "Charles Manson";
 			serialKillerName[6] = "John Wayne Gacy";
 			serialKillerName[7] = "Ted Bundy";
@@ -30,7 +30,7 @@ public class StudentInformation {
 			printDetails(scnr, serialKillerName, userInt);
 
 			System.out.println("Would you like to continue? (enter \"yes\" or \"no\")");
-			String answer = scnr.nextLine();
+			String answer = scnr.nextLine().toLowerCase();
 
 			if (!answer.equals("yes")) {
 				information = false;
@@ -96,7 +96,7 @@ public class StudentInformation {
 		numVictims[9] = 93;
 
 		while (!correctString) {
-			userString = scnr.nextLine();
+			userString = scnr.nextLine().toLowerCase();
 			if (userString.equals("hometown")) {
 				System.out.println(name[userInt] + " was born in " + hometown[userInt] + ".");
 				correctString = true;
