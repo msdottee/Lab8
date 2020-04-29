@@ -1,10 +1,9 @@
 package lab8;
 
-import java.io.NotActiveException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class StudentInformation {
+public class SerialKillerInformation {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
